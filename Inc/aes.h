@@ -1,6 +1,6 @@
 #ifndef __AES_H__
 #define __AES_H__
-
+#include<stdint.h>
 /**
  * --------------------------------------------------------------------------------------------------
  * File: aes.h
@@ -21,7 +21,7 @@
 #define DEVICE_ID 0x00      /*[MODIFIABLE]*/
 
 #if DEVICE_ID == OS_DEVICE
-    #include<stdint.h>
+    #include<stdio.h>
 
 #endif
 
