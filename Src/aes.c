@@ -445,7 +445,7 @@ void AES_ExpandKey(uint8_t AES_Type, const uint8_t* key, uint8_t* ExpKey){
  * @param const uint8_t* key passes the address of the key, size of key is governed by the AES_Type.
  * @param uint32_t* Size_EncryptedByteStream passes the address of the variable where the size of the encrypted input will be populated by the routine.
  *        if Size_PlainByteStream%AES_BLOCKSIZE = 0 ==> Size_EncryptedByteStream = Size_PlainByteStream + AES_BLOCKSIZE
- *        else Size_EncryptedByteStream = Size_PlainByteStream + AES_BLOCKSIZE + (AES_BLOCKSIZE - Size_PlainByteStream%AES_BLOCKSIZE)
+ *        else Size_EncryptedByteStream = Size_PlainByteStream  + (AES_BLOCKSIZE - Size_PlainByteStream%AES_BLOCKSIZE)
  * @param uint8_t* IV passes the address of the initialization vector, the programmer need to make sure that each time this routine is used, the IV must be different (produced using CPRNG/PRNG).
  *        for embedded systems, to save memory, one can by himself/herself put the IV at last 16 bytes of the array of size ( Size_ByteStream + 16 bytes IV + 16 byte padding + (Size_ByteStream-((Size_ByteStream)%16)) byte padding ) passed 
  *        to the routine. 
